@@ -34,7 +34,6 @@ long getSnake() {
   long _snake=(long)0;
   for(int i=0;i<snakedisplaylength;i++) {
     _snake = _snake | (long)1 << (NUMBER_OF_LEDS - 1 - snake[i] );
-    //_snake = _snake | 0B100000000000 >> snake[i];
   } 
   return _snake;
 }
