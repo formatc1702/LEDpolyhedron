@@ -1,5 +1,3 @@
-// Take care of running the LEDs
-
 /*
 
  Tetrahedron layout
@@ -18,7 +16,7 @@
  //  /__11             8___\
  // B------6---------7------C
  
- */
+*/
 
 // Constant definitions ///////////////////////////////////////////////
 
@@ -39,22 +37,25 @@
 
 #define NUMBER_OF_LEDS NUMBER_OF_EDGES * 2
 
-// Timing stuff (in microseconds)
-#define LED_ONTIME 100
-#define LED_OFFTIME 1
- 
 // Arduino pin definitions
+// Arduino Uno
+// /*
 #define A 8
 #define B 9
 #define C 10
 #define D 11
+// */
 
-// LED pin definitions
-#define ANODE 0
-#define CATHODE 1
- 
+// ATtiny45/85
+/*
+#define A PB2
+#define B PB4
+#define C PB1
+#define D PB3
+// */
+
 // two bytes per edge, antiparallel to each other 
-const byte ledpins[NUMBER_OF_LEDS][2] = {
+const int ledpins[NUMBER_OF_LEDS][2] = {
   {B,A},
   {C,A},
   {D,A},
@@ -83,31 +84,6 @@ const int NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {9,4,7},
   {8,5,10},
   {11,5,9},
-  {10,3,6}};
+  {10,3,6}
+};
 
-// Functions //////////////////////////////////////////////////
-
-// Write all LEDs at once
-// Pass an int, n lower bits stand for the n polyhedron LEDs
-void writeLEDs(long _ledState) {
-  for(int i=0;i<NUMBER_OF_LEDS;i++) {
-    writeLed(i,(_ledState >> (NUMBER_OF_LEDS - 1 - i)) & (long)1);
-    delayMicroseconds(LED_ONTIME);
-    writeLed(i,0); 
-    delayMicroseconds(LED_OFFTIME);
-  }
-}
-
-// Write a single LED (direct charlieplex pin control)
-void writeLed(byte led, long state) {
-  if(state == (long)1) {
-    pinMode(ledpins[led][ANODE],OUTPUT);
-    pinMode(ledpins[led][CATHODE],OUTPUT);
-    digitalWrite(ledpins[led][ANODE],HIGH);
-    digitalWrite(ledpins[led][CATHODE],LOW);
-  } 
-  else {
-    pinMode(ledpins[led][ANODE],INPUT);
-    pinMode(ledpins[led][CATHODE],INPUT);   
-  }
-}

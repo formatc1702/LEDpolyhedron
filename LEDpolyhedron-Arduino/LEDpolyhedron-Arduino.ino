@@ -3,6 +3,13 @@
 // Daniel Rojas (danielrojas.net) and
 // JH
 
+// #include "_04_tetrahedron.cpp"
+// #include "_06_cube.cpp" // unfinished
+ #include "_08_octahedron.cpp"
+// #include "_12_dodecahedron.cpp" // unfinished
+// #include "_20_icosahedron.cpp"
+
+
 void setup() {
   initSnake(4); // initalize the snake with a certain displayed length
 }
