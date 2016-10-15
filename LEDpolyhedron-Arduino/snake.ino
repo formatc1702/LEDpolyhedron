@@ -1,7 +1,7 @@
 // Make a snake run along the edges of the polyhedron
 
 // Snake definitions
-const int snakemaxlength = 4;
+const int snakemaxlength = 8;
 const long snakeupdatedelay = 75;
 const long snakelengthupdatedelay = 5000;
 
