@@ -13,8 +13,11 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="icosahedron_mapping.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icosahedron_mapping.svg"
+   inkscape:export-filename="/Users/daniel/Documents/Development/1_Projects/LEDpolyhedron/Docs/Mapping aids/icosahedron_mapping.png"
+   inkscape:export-xdpi="138.2"
+   inkscape:export-ydpi="138.2">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,7 +28,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.94410576"
-     inkscape:cx="274.02374"
+     inkscape:cx="414.89779"
      inkscape:cy="586.0712"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
@@ -33,11 +36,11 @@
      inkscape:snap-page="false"
      inkscape:snap-object-midpoints="true"
      inkscape:object-nodes="true"
-     inkscape:window-width="1440"
-     inkscape:window-height="851"
-     inkscape:window-x="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="1001"
+     inkscape:window-x="-11"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:snap-global="false" />
   <metadata
      id="metadata7">
@@ -47,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
