@@ -3,7 +3,7 @@
  Icosahedron layout
 
  < TODO >
- 
+
 */
 
 // Constant definitions ///////////////////////////////////////////////
@@ -58,8 +58,8 @@
 #define K PB0
 #define L PB1
 // */
- 
-// two bytes per edge, antiparallel to each other 
+
+// two bytes per edge, antiparallel to each other
 const char ledpins[NUMBER_OF_LEDS][2] = {
   {A,B},
   {A,C},
@@ -188,4 +188,3 @@ const char NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
 {53,55,56,57,59},
 {54,55,56,57,58}
 };
-

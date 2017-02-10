@@ -2,12 +2,25 @@
 // Work on Arduino code including snake and others by
 // Daniel Rojas (danielrojas.net) and
 // JH
+#include <Arduino.h>
+
+#define TETRAHEDRON   4
+#define CUBE          6
+#define OCTAHEDRON    8
+#define DODECAHEDRON 12
+#define ICOSAHEDRON  20
+
+#define POLYHEDRON TETRAHEDRON
+
+#include "polyhedron.h"
+#include "snake.h"
+
 
 // #include "_04_tetrahedron.cpp"
 // #include "_06_cube.cpp" // unfinished
 // #include "_08_octahedron.cpp"
 // #include "_12_dodecahedron.cpp" // unfinished
- #include "_20_icosahedron.cpp"
+// #include "_20_icosahedron.cpp"
 
 
 void setup() {

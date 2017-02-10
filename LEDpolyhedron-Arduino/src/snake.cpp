@@ -1,5 +1,9 @@
 // Make a snake run along the edges of the polyhedron
 
+#include "snake.h"
+#include "polyhedron.h"
+#include <Arduino.h>
+
 // Snake definitions
 const int snakemaxlength = 8;
 const long snakeupdatedelay = 75;
@@ -34,24 +38,24 @@ long getSnake() {
   long _snake=(long)0;
   for(int i=0;i<snakedisplaylength;i++) {
     _snake = _snake | (long)1 << (NUMBER_OF_LEDS - 1 - snake[i] );
-  } 
+  }
   return _snake;
 }
 
 // Snake movement and growth
 
 void advanceSnake() {
-  if(millis() - snakeupdatetime >= snakeupdatedelay) {    
+  if(millis() - snakeupdatetime >= snakeupdatedelay) {
     advanceSnakeNow();
-    snakeupdatetime += snakeupdatedelay; 
+    snakeupdatetime += snakeupdatedelay;
   }
 }
 
 void growSnake() {
-  if(millis() - snakelengthupdatetime >= snakelengthupdatedelay) {    
+  if(millis() - snakelengthupdatetime >= snakelengthupdatedelay) {
     if(++snakedisplaylength > snakemaxlength)
       snakedisplaylength = 1;
-    snakelengthupdatetime += snakelengthupdatedelay; 
+    snakelengthupdatetime += snakelengthupdatedelay;
   }
 }
 
@@ -61,7 +65,7 @@ void growSnake() {
 long advanceSnakeNow() {
   for(int i=snakemaxlength-1;i>0;i--) {
     snake[i] = snake[i-1];
-  } 
+  }
   snake[0] = decideNewSnake();
 }
 
@@ -81,4 +85,3 @@ int getNewSnakeOnVertex(int currentPixel) {
   int _rand = random(1,EDGES_PER_VERTEX); // choose 1st or 2nd element of neighbour array
   return NEIGHBOURS[currentPixel][_rand];
 }
-

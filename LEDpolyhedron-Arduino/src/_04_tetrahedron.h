@@ -1,7 +1,8 @@
+#if POLYHEDRON==TETRAHEDRON
 /*
 
  Tetrahedron layout
- 
+
  //             A
  //            /|\
  //           / 2 \
@@ -11,15 +12,15 @@
  //       /     5     \
  //      3      |      4
  //     /       |       \
- //    /      __D__      \ 
+ //    /      __D__      \
  //   /   _10      9___   \
  //  /__11             8___\
  // B------6---------7------C
- 
+
 */
 
 // Constant definitions ///////////////////////////////////////////////
-/*
+
 // Geometry definition
 #define NUMBER_OF_EDGES 6
 // tetrahedron  6
@@ -54,7 +55,7 @@
 #define D PB3
 // */
 
-// two bytes per edge, antiparallel to each other 
+// two bytes per edge, antiparallel to each other
 /* const int ledpins[NUMBER_OF_LEDS][2] = {
   {B,A},
   {C,A},
@@ -87,4 +88,4 @@ const int NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {10,3,6}
 };
 // */
-
+#endif

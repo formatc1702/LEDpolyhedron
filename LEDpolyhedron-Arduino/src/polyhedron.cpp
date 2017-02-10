@@ -1,11 +1,5 @@
-// Timing stuff (in microseconds)
-#define LED_ONTIME 100
-#define LED_OFFTIME 1
- 
-// LED pin definitions
-#define ANODE   0
-#define CATHODE 1
- 
+#include "polyhedron.h"
+
 // Functions //////////////////////////////////////////////////
 
 // Write all LEDs at once
@@ -16,7 +10,7 @@ void writeLEDs(long _ledState) {
     if(state) { // only write leds that are actually on
       writeLed(i,state);
       delayMicroseconds(LED_ONTIME);
-      writeLed(i,0); 
+      writeLed(i,0);
       delayMicroseconds(LED_OFFTIME);
     }
   }
@@ -29,10 +23,9 @@ void writeLed(byte led, long state) {
     pinMode(ledpins[led][CATHODE],OUTPUT);
     digitalWrite(ledpins[led][ANODE],HIGH);
     digitalWrite(ledpins[led][CATHODE],LOW);
-  } 
+  }
   else {
     pinMode(ledpins[led][ANODE],INPUT);
-    pinMode(ledpins[led][CATHODE],INPUT);   
+    pinMode(ledpins[led][CATHODE],INPUT);
   }
 }
-
