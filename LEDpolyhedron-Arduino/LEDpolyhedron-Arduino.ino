@@ -5,9 +5,9 @@
 
 // #include "_04_tetrahedron.cpp"
 // #include "_06_cube.cpp" // unfinished
- #include "_08_octahedron.cpp"
+// #include "_08_octahedron.cpp"
 // #include "_12_dodecahedron.cpp" // unfinished
-// #include "_20_icosahedron.cpp"
+ #include "_20_icosahedron.cpp"
 
 
 void setup() {
@@ -15,7 +15,8 @@ void setup() {
 }
 
 void loop() {
-  advanceSnake(); // make snake move along the edges of the pyramid, randomly deciding which path to take
+//  advanceSnake(); // make snake move along the edges of the pyramid, randomly deciding which path to take
   //growSnake(); // every once in a while, make the snake longer
-  writeLEDs(getSnake()); // actually send output to the LEDs
+//  writeLEDs(getSnake()); // actually send output to the LEDs
+  writeLEDs((long)11111111111111111111111111111111); // actually send output to the LEDs
 }

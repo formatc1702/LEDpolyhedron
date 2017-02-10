@@ -12,10 +12,13 @@
 // Pass an int, n lower bits stand for the n polyhedron LEDs
 void writeLEDs(long _ledState) {
   for(int i=0;i<NUMBER_OF_LEDS;i++) {
-    writeLed(i,(_ledState >> (NUMBER_OF_LEDS - 1 - i)) & (long)1);
-    delayMicroseconds(LED_ONTIME);
-    writeLed(i,0); 
-    delayMicroseconds(LED_OFFTIME);
+    int state = (_ledState >> (NUMBER_OF_LEDS - 1 - i)) & (long)1;
+    if(state) { // only write leds that are actually on
+      writeLed(i,state);
+      delayMicroseconds(LED_ONTIME);
+      writeLed(i,0); 
+      delayMicroseconds(LED_OFFTIME);
+    }
   }
 }
 

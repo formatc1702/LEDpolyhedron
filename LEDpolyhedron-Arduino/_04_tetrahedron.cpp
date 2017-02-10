@@ -19,7 +19,7 @@
 */
 
 // Constant definitions ///////////////////////////////////////////////
-
+/*
 // Geometry definition
 #define NUMBER_OF_EDGES 6
 // tetrahedron  6
@@ -55,7 +55,7 @@
 // */
 
 // two bytes per edge, antiparallel to each other 
-const int ledpins[NUMBER_OF_LEDS][2] = {
+/* const int ledpins[NUMBER_OF_LEDS][2] = {
   {B,A},
   {C,A},
   {D,A},
@@ -86,4 +86,5 @@ const int NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {11,5,9},
   {10,3,6}
 };
+// */
 

@@ -27,7 +27,7 @@
 
 // Arduino pin definitions
 // Arduino Uno
-// /*
+/*
 #define A 2
 #define B 3
 #define C 4
@@ -40,6 +40,23 @@
 #define J 11
 #define K 12
 #define L 13
+// */
+
+// ATtiny88
+// /*
+#include <avr/io.h>
+#define A PD0
+#define B PD2
+#define C PC4
+#define D PC2
+#define E PC0
+#define F PD4
+#define G PD6
+#define H PB7
+#define I PB5
+#define J PB3
+#define K PB0
+#define L PB1
 // */
  
 // two bytes per edge, antiparallel to each other 

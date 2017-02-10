@@ -26,16 +26,17 @@
 // */
 
 // ATtiny84
-// /*
+/*
 #include <avr/io.h>
 #define K PA1
-#define Y PB2
-#define R PB1
+#define Y 8 // PB2 didn't work
+#define R 9 // PB1 didn't work
 #define B PA3
 #define G PA5
 #define W PA6
 // */
 
+/*
 // two bytes per edge, antiparallel to each other 
 const char ledpins[NUMBER_OF_LEDS][2] = {
   {Y,W},
@@ -93,4 +94,5 @@ const char NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {23, 1, 2,21},
   {22, 8,15,16},
 };
+// */
 
