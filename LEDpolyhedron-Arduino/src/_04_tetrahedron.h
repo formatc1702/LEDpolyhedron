@@ -1,4 +1,3 @@
-#if POLYHEDRON==TETRAHEDRON
 /*
 
  Tetrahedron layout
@@ -22,41 +21,31 @@
 // Constant definitions ///////////////////////////////////////////////
 
 // Geometry definition
-#define NUMBER_OF_EDGES 6
-// tetrahedron  6
-// cube         12
-// octahedron   12
-// dodecahedron 30
-// icosahedron  30
-
+#define NUMBER_OF_EDGES  6
 #define EDGES_PER_VERTEX 3
-// tetrahedron  3
-// cube         3
-// octahedron   4
-// dodecahedron 3
-// icosahedron  5
 
 #define NUMBER_OF_LEDS NUMBER_OF_EDGES * 2
 
-// Arduino pin definitions
+// pin definitions
+#if PLATFORM==ARDUINO
 // Arduino Uno
-// /*
 #define A 8
 #define B 9
 #define C 10
 #define D 11
-// */
 
+#else
 // ATtiny45/85
-/*
+#include <avr/io.h>
 #define A PB2
 #define B PB4
 #define C PB1
 #define D PB3
-// */
+
+#endif
 
 // two bytes per edge, antiparallel to each other
-/* const int ledpins[NUMBER_OF_LEDS][2] = {
+const int ledpins[NUMBER_OF_LEDS][2] = {
   {B,A},
   {C,A},
   {D,A},
@@ -87,5 +76,3 @@ const int NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {11,5,9},
   {10,3,6}
 };
-// */
-#endif

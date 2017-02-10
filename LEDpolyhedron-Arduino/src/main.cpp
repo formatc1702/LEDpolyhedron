@@ -10,7 +10,11 @@
 #define DODECAHEDRON 12
 #define ICOSAHEDRON  20
 
+#define PL_ARDUINO 0
+#define PL_ATTINY  1
+
 #define POLYHEDRON TETRAHEDRON
+#define PLATFORM   PL_ARDUINO
 
 #include "polyhedron.h"
 #include "snake.h"

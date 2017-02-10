@@ -3,30 +3,29 @@
  Octahedron layout
 
  < TODO >
- 
+
 */
 
 // Constant definitions ///////////////////////////////////////////////
 
 // Geometry definition
-#define NUMBER_OF_EDGES 12
-#define EDGES_PER_VERTEX 4
+#define NUMBER_OF_EDGES  12
+#define EDGES_PER_VERTEX  4
 
 #define NUMBER_OF_LEDS NUMBER_OF_EDGES * 2
 
-// Arduino pin definitions
+// pin definitions
+#if PLATFORM==ARDUINO
 // Arduino Uno
-/*
 #define K 2
 #define Y 3
 #define R 4
 #define B 5
 #define G 6
 #define W 7
-// */
 
+#else
 // ATtiny84
-/*
 #include <avr/io.h>
 #define K PA1
 #define Y 8 // PB2 didn't work
@@ -34,10 +33,10 @@
 #define B PA3
 #define G PA5
 #define W PA6
-// */
 
-/*
-// two bytes per edge, antiparallel to each other 
+#endif
+
+// two bytes per edge, antiparallel to each other
 const char ledpins[NUMBER_OF_LEDS][2] = {
   {Y,W},
   {W,Y},
@@ -94,5 +93,3 @@ const char NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
   {23, 1, 2,21},
   {22, 8,15,16},
 };
-// */
-

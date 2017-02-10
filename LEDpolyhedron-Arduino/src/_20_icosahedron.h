@@ -9,25 +9,14 @@
 // Constant definitions ///////////////////////////////////////////////
 
 // Geometry definition
-#define NUMBER_OF_EDGES 30
-// tetrahedron  6
-// cube         12
-// octahedron   12
-// dodecahedron 30
-// icosahedron  30
-
-#define EDGES_PER_VERTEX 5
-// tetrahedron  3
-// cube         3
-// octahedron   4
-// dodecahedron 3
-// icosahedron  5
+#define NUMBER_OF_EDGES  30
+#define EDGES_PER_VERTEX  5
 
 #define NUMBER_OF_LEDS NUMBER_OF_EDGES * 2
 
-// Arduino pin definitions
+// pin definitions
+#if PLATFORM==ARDUINO
 // Arduino Uno
-/*
 #define A 2
 #define B 3
 #define C 4
@@ -40,10 +29,9 @@
 #define J 11
 #define K 12
 #define L 13
-// */
 
+#else
 // ATtiny88
-// /*
 #include <avr/io.h>
 #define A PD0
 #define B PD2
@@ -57,7 +45,8 @@
 #define J PB3
 #define K PB0
 #define L PB1
-// */
+
+#endif
 
 // two bytes per edge, antiparallel to each other
 const char ledpins[NUMBER_OF_LEDS][2] = {

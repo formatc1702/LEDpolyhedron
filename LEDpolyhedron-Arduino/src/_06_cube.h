@@ -3,25 +3,28 @@
  Cube layout
 
  < TODO >
- 
+
 */
 
 // Constant definitions ///////////////////////////////////////////////
-/*
+
 // Geometry definition
 #define NUMBER_OF_EDGES 12
 #define EDGES_PER_VERTEX 3
 
 #define NUMBER_OF_LEDS NUMBER_OF_EDGES * 2
 
-// Arduino pin definitions
+// pin definitions
+#if PLATFORM==ARDUINO
 // Arduino Uno
-// /*
-#define A 0
-// */
+#else
+// ATtiny ???
+#include <avr/io.h>
 
- /*
-// two bytes per edge, antiparallel to each other 
+#endif
+
+
+// two bytes per edge, antiparallel to each other
 const int ledpins[NUMBER_OF_LEDS][2] = {
 };
 
@@ -30,6 +33,3 @@ const int ledpins[NUMBER_OF_LEDS][2] = {
 // 1st and 2nd neighbour: LEDs on same vertex but on other edge
 const int NEIGHBOURS[NUMBER_OF_LEDS][EDGES_PER_VERTEX] = {
 };
-
-// */
-

@@ -1,18 +1,14 @@
 #include <Arduino.h>
 
-#if POLYHEDRON == TETRAHEDRON
+#if   POLYHEDRON == TETRAHEDRON
 #include "_04_tetrahedron.h"
-#endif
-#if POLYHEDRON == CUBE
+#elif POLYHEDRON == CUBE
 #include "_06_cube.h"
-#endif
-#if POLYHEDRON == OCTAHEDRON
+#elif POLYHEDRON == OCTAHEDRON
 #include "_08_octahedron.h"
-#endif
-#if POLYHEDRON == DODECAHEDRON
+#elif POLYHEDRON == DODECAHEDRON
 #include "_12_dodecahedron.h"
-#endif
-#if POLYHEDRON == ICOSAHEDRON
+#elif POLYHEDRON == ICOSAHEDRON
 #include "_20_icosahedron.h"
 #endif
 
