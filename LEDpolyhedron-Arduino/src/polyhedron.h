@@ -10,6 +10,14 @@
 #include "_12_dodecahedron.h"
 #elif POLYHEDRON == ICOSAHEDRON
 #include "_20_icosahedron.h"
+#else
+#error "Wrong definiton of POLYHEDRON"
+#endif
+
+#if   PLATFORM == PL_ARDUINO
+#elif PLATFORM == PL_ATTINY
+#else
+#error "Wrong definition of PLATFORM"
 #endif
 
 // Timing stuff (in microseconds)
